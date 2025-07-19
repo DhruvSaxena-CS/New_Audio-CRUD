@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Uploaded Audios</title>
+</head>
+<body>
+  <h1>Uploaded/Generated Audio List</h1>
+  <a href="/">⬅️ Back</a>
+  <ul>
+    <% uploadedFiles.forEach(file => { %>
+      <li>
+        <strong>Text:</strong> <%= file.text %><br>
+        <strong>Language:</strong> <%= file.lang %><br>
+        <strong>Uploaded:</strong> <%= file.timestamp %><br>
+        <audio controls>
+          <source src="/uploads/<%= file.filename %>" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+
+        <hr>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>
